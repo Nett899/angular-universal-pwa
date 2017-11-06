@@ -12,10 +12,7 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "noImplicitAny": false,
-    "rootDir": "./src",
-    "baseUrl": "src"
-
+    "noImplicitAny": false
   },
   "angularCompilerOptions": {
     "entryModule": "./src/app/browser-app.module#BrowserAppModule"

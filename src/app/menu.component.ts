@@ -8,7 +8,6 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { isPlatformBrowser } from '@angular/common';
-import { By } from '@angular/platform-browser';
 
 @Component({
     selector: 'menu',

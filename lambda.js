@@ -1,6 +1,6 @@
 'use strict';
 const awsServerlessExpress = require('aws-serverless-express');
-const app = require('././dist/server');
+const app = require('./dist/server');
 const binaryMimeTypes = [
   'application/javascript',
   'application/json',
