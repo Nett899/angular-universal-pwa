@@ -1,16 +1,25 @@
 {
-  "extends": "./tsconfig.server.json",
-  "angularCompilerOptions": {
-    "genDir": "./src/ngfactory",
-    "entryModule": "./src/app/server-app.module#ServerAppModule"
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "lib": ["dom", "es6", "es2015", "es2016", "es2017", "esnext"],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
-  "files": [
-    "./node_modules/@angular-universal-serverless/external-module/release/src/externalComponent/external.module.d.ts"
-  ],
+  "angularCompilerOptions": {
+    "entryModule": "./src/app/server-app.module#ServerAppModule",
+    "genDir": "./src/ngfactory"
+  },
+    "files": [
+      "./node_modules/@angular-universal-serverless/external-module/release/src/externalComponent/external.module.d.ts"
+    ],
   "include": [
     "./src/main.server.aot.ts",
-    "./src/app/lazy/lazy.module.ts",
-    "./src/app/httpProxy/http-proxy.module.ts",
-    "./src/app/server-app.module.ts"
+        "./src/app/httpProxy/http-proxy.module.ts",
+        "./src/app/lazy/lazy.module.ts",
+        "./src/app/server-app.module.ts"
   ]
 }
