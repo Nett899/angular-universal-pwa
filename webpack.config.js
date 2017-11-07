@@ -19,7 +19,6 @@ module.exports = function (options, webpackOptions) {
       }
 
       const serverConfig = webpackMerge({}, commonPartial(options), serverPartial, {
-          entry: options.aot ? './src/main.server.aot.ts' : serverPartial.entry, // Temporary
           plugins: [
               getAotPlugin('server', !!options.aot)
           ]
@@ -39,6 +38,7 @@ module.exports = function (options, webpackOptions) {
           configs.push(webpackMerge({}, clientConfig, dllPartial));
       }
       if (options.server) {
+          console.log(serverConfig.plugins[2]);
           configs.push(serverConfig);
       }
       if (options.client) {
@@ -51,3 +51,4 @@ module.exports = function (options, webpackOptions) {
       }
   return configs;
 }
+

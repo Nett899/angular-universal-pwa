@@ -43,12 +43,19 @@ module.exports = function(options) {
         },
         module: {
             rules: [
-                { test: /\.ts$/, loaders: (!!options.aot || !!options.dll)?['@ngtools/webpack']: [
+                {
+                    test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ngfactory|\.ts)$/, loaders: (!!options.aot || !!options.dll)?['@ngtools/webpack']: [
                     '@angularclass/hmr-loader',
                     'awesome-typescript-loader?{configFileName: "tsconfig.browser.json"}',
                     'angular2-template-loader',
                     'angular-router-loader?loader=system&genDir=compiled&aot=false'
                 ] },
+                // { test: /\.ts$/, loaders: (!!options.aot || !!options.dll)?['@ngtools/webpack']: [
+                //     '@angularclass/hmr-loader',
+                //     'awesome-typescript-loader?{configFileName: "tsconfig.browser.json"}',
+                //     'angular2-template-loader',
+                //     'angular-router-loader?loader=system&genDir=compiled&aot=false'
+                // ] },
                 { test: /\.css$/, loader: 'raw-loader' },
                 { test: /\.html$/, loader: 'raw-loader' },
                 {

@@ -13,5 +13,9 @@
       "esnext"
     ],
     "typeRoots": ["node_modules/@types"]
+  },
+  "angularCompilerOptions": {
+    "genDir": "./src/ngfactory",
+    "entryModule": "./src/app/server-app.module#ServerAppModule"
   }
 }
